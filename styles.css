@@ -1,0 +1,104 @@
+html {
+    height: 100%;
+    font: 20px "Comic Sans MS", "Comic Sans", sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+}
+
+body>div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100%;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+body>div::before {
+    content: "";
+    position: absolute;
+    width: max(200vw, 200vh);
+    aspect-ratio: 1 / 1;
+    margin: auto;
+    background-image: repeating-conic-gradient(#fdfbee 0 15deg, #fde9bf 15deg 30deg);
+    filter: blur(10px);
+    animation: rotate 10s linear infinite;
+}
+
+
+#clicker {
+    width: 300px;
+    aspect-ratio: 1 / 1;
+    border: none;
+    color: black;
+    background-color: transparent;
+    background-image: url("/cookie.png");
+    background-size: cover;
+    font: bold 50px "Comic Sans MS", "Comic Sans", sans-serif;
+    cursor: pointer;
+    animation: size 2s ease-in-out infinite;
+}
+
+#clicker:focus {
+    outline: none;
+}
+
+#info {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 5px;
+    font: 30px "Comic Sans MS", "Comic Sans", sans-serif;
+    text-align: right;
+}
+
+.cookie {
+    position: absolute;
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    pointer-events: none;
+    animation: exit 500ms linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes size {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes exit {
+    from {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(0, -100px);
+        opacity: 0;
+    }
+}
