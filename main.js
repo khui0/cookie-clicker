@@ -27,7 +27,9 @@ cookie.addEventListener("click", e => {
 });
 
 document.addEventListener("keydown", e => {
-    e.preventDefault();
+    if (e.key == "Enter") {
+        e.preventDefault();
+    }
 })
 
 function clickCookie() {
