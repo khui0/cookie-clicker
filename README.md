@@ -1,3 +1,3 @@
 # cookie clicker
  
-testing localstorage
+testing localStorage
