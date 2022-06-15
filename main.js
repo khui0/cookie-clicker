@@ -72,7 +72,7 @@ function updateInfo() {
 
 setInterval(() => {
     let clickers = level;
-    click();
+    !document.hidden && click();
     function click() {
         if (clickers > 1) {
             clickCookie();
